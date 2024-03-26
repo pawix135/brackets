@@ -2,8 +2,6 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Button } from '../ui/button';
-import chunk from 'lodash.chunk';
-import shuffle from 'lodash.shuffle';
 import { Info, X } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { useNavigate } from 'react-router-dom';
@@ -121,7 +119,7 @@ const GroupInitializer: React.FC<Props> = () => {
   };
 
   const onDragStart = (
-    e: React.DragEvent<HTMLDivElement>,
+    _e: React.DragEvent<HTMLDivElement>,
     tempPlayerIndex: number,
     groupIndex?: number
   ) => {
@@ -132,7 +130,7 @@ const GroupInitializer: React.FC<Props> = () => {
     }
   };
 
-  const onDragEnter = (e: React.DragEvent<HTMLDivElement>, groupIndex: number) => {
+  const onDragEnter = (_e: React.DragEvent<HTMLDivElement>, groupIndex: number) => {
     draggOverPlayerRef.current = [groupIndex];
   };
 
